@@ -1,0 +1,22 @@
+# mr joo developer website
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    for i in range(2, n):
+        next_num = fib_sequence[i-1] + fib_sequence[i-2]
+        fib_sequence.append(next_num)
+    return fib_sequence
+
+def main():
+    try:
+        n = int(input("Enter the number of Fibonacci numbers to generate: "))
+        if n < 0:
+            print("Please enter a non-negative number.")
+            return
+        fib_seq = fibonacci(n)
+        print(f"The first {n} Fibonacci numbers are:")
+        print(fib_seq)
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
